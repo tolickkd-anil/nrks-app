@@ -56,11 +56,22 @@
 
   <div class="frame-wrap">
     <iframe
-      src="https://script.google.com/a/macros/AKfycbxY-9DCz4kpwpxWCUs6TtPPDpPnc_kY4w5zb1uLCGYN2GjX30OSDwZG2IUEUaH0xnLfTg/exec"
+      src="https://script.google.com/macros/s/AKfycbxY-9DCz4kpwpxWCUs6TtPPDpPnc_kY4w5zb1uLCGYN2GjX30OSDwZG2IUEUaH0xnLfTg/exec"
       title="न रा का स कोषिकोड App"
       allow="clipboard-read; clipboard-write">
     </iframe>
   </div>
-
+<script>
+  window.addEventListener('load', function() {
+    const iframe = document.getElementById('gasFrame');
+    // On mobile devices, Google may force redirect to a URL containing /u/数字/, manually strip this part
+    if (iframe.contentWindow.location.href.includes('/u/')) {
+      const originalSrc = iframe.src;
+      // Replace the /u/xxx/ part with empty
+      const cleanUrl = originalSrc.replace(/\/u\/\d+\//, '/');
+      iframe.src = cleanUrl;
+    }
+  });
+</script>
 </body>
 </html>
